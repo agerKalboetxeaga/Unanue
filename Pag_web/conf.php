@@ -7,7 +7,7 @@ $mysql_pass = "";
 $mysql_db = "BDweb";
 
 //Gallery
-$enpresa = "Proiektua";
+$enpresa = "Unanue";
 $version = "1.0";
 
 //Vulnerabilities (true or false)
@@ -20,6 +20,6 @@ $version = "1.0";
 //$guard_auth_sqli = true; //Block authentication bypass SQL injection
 //$guard_lfi = true; //Block local file inclusions
 //$guard_rfi = true; //Block remote file inclusions
-//$guard_fuv = true; //Block file upload vulnerabilities
+$guard_fuv = true; //Block file upload vulnerabilities
 
 ?>
