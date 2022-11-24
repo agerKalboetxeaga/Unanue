@@ -35,7 +35,7 @@ if(isset($_GET['upload'])){
                     Stock: <input type="text" name="stock"><br>
                     Irudia aukeratu:<br>
                     <br>
-                    <input name=upfile type=file><br>
+                    <input name=upfile type=img><br>
                     <br>
                     <input type=submit value=Igo>
                 </form>

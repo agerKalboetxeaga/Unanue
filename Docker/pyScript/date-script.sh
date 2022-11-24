@@ -1,2 +1,2 @@
 #!/bin/sh
-jupyter notebook pyScript_proiektu.ipynb --no-browser
+jupyter notebook pyScript_proiektu.ipynb

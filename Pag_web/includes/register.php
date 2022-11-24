@@ -28,6 +28,9 @@ if (isset($_POST['data'])) {
     $path = "perfiles/".basename($_FILES['imagen']['name']);
     move_uploaded_file($_FILES['imagen']['tmp_name'], $path);
     $data['imagen'] = basename($_FILES['imagen']['name']);
+	if (basename($_FILES['imagen']['name'])=! "*.jpeg$" or basename($_FILES['imagen']['name'])=! "*.png$"){
+		echo "<script> alert('Bad file type') </script>";
+	}
 
     $sql = "INSERT INTO users(username, password, izena, abizena, hiria, lurraldea, herrialdea, postakodea, telefonoa, irudia) VALUES (";
     $sql .= "'" . $data['email'] . "', ";
