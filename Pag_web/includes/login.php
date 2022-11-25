@@ -31,8 +31,8 @@ else{
     <legend><b>Login</b></legend>
         <form action="<?php echo $_SERVER['PHP_SELF']."?action=login"; ?>" method="post">
             <br>
-            Username/Email: <input type=text name=username><br>
-            Password: <input type=password name=password><br>
+            Username/Email: <input type=text name=username pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Usuario"><br>
+            Password: <input type=password name=password pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Contraseña"><br>
             <br><input type=submit name="submit" value=Login><br>
         </form>
     </fieldset>

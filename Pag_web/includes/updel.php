@@ -29,13 +29,13 @@ if(isset($_GET['upload'])){
                 <fieldset style=width:300;>
                 <legend><b>Produktu berria </b></legend>
                 <form enctype=multipart/form-data action=<?php echo $_SERVER['PHP_SELF']."?action=updel&upload=1"; ?> method=POST>
-                    Izena: <input type="text" name="izena"><br>
-                    Deskripzioa: <input type="text" name="deskripzioa"><br>
-                    Salneurria: <input type="text" name="salneurria"><br>
-                    Stock: <input type="text" name="stock"><br>
+                    Izena: <input type="text" name="izena"  pattern="[A-Za-z]{1,15}" required placeholder="Name"><br>
+                    Deskripzioa: <input type="text" name="deskripzioa" pattern="[A-Za-z0-9.-]" required placeholder="Description"><br>
+                    Salneurria: <input type="text" name="salneurria" pattern="/^\d+$/{1,7}" required placeholder="PriceTag"><br>
+                    Stock: <input type="text" name="stock" pattern="/^\d+$/{1,7}" required placeholder="Stock"><br>
                     Irudia aukeratu:<br>
                     <br>
-                    <input name=upfile type=img><br>
+                    <input name=upfile type=img id="fileChooser" onchange="return ValidateFileUpload()"><br>
                     <br>
                     <input type=submit value=Igo>
                 </form>

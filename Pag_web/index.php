@@ -11,6 +11,7 @@ include("includes/mysql.php");
 <head>
 <title><?php echo $enpresa; ?></title>
 </html>
+<script src="Validation.js"></script>
 <link rel=stylesheet type=text/css href=style.css>
 </head>
 <body>
@@ -49,7 +50,7 @@ else{
 
 ?>
 <form name="search" method="get" action=<?php echo $_SERVER['PHP_SELF']."?action=search" ?> id="search">
-    <input type="text" value="" name="keyword"/>
+    <input type="text" value="" name="keyword"  pattern="[A-Za-z]{1,15}" required placeholder="Hitz gakoa"/>
     <input type="submit" name="search" value="Bilatu"/>
 </form>
 
