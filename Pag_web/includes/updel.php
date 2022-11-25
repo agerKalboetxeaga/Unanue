@@ -4,14 +4,27 @@ if($_SESSION['username'] != "admin@bdweb"){
 }
 
 if(isset($_GET['pic_id'])){
+
+    $_GET['pic_id'] = mysql_real_escape_string($_GET['pic_id']);
     $filequery = mysqli_query($conx,"SELECT pic FROM produktuak WHERE id LIKE ".$_GET['pic_id']);
-  $delfile = mysqli_fetch_array($filequery);
-  unlink("images/".$delfile['pic']);
-  mysqli_query($conx,"DELETE FROM produktuak WHERE id = ".$_GET['pic_id']);
-  echo "<div align=center><h5>Produktua ezabatuta</h5></div><br>";
+    $delfile = mysqli_fetch_array($filequery);
+    unlink("images/".$delfile['pic']);
+    mysqli_query($conx,"DELETE FROM produktuak WHERE id = ".$_GET['pic_id']);
+    echo "<div align=center><h5>Produktua ezabatuta</h5></div><br>";
 }
 
 if(isset($_GET['upload'])){
+    //Sanitization of upload
+    $_POST['izena'] = mysql_real_escape_string($_POST['izena']);
+    $_POST['izena'] = filter_var($_POST['izena'], FILTER_SANITIZE_STRING);
+
+    $_POST['deskripzioa'] = mysql_real_escape_string($_POST['deskripzioa']);
+    $_POST['deskripzioa'] = filter_var($_POST['deskripzioa'], FILTER_SANITIZE_STRING);
+
+    $_POST['salneurria'] = mysql_real_escape_string($_POST['salneurria']);
+    $_POST['salneurria'] = filter_var($_POST['salneurria'], FILTER_SANITIZE_NUMBER_INT);
+
+
     $path = "images/".basename($_FILES['upfile']['name']);
     $uploader = $_SESSION['username'];
     move_uploaded_file($_FILES['upfile']['tmp_name'], $path);
