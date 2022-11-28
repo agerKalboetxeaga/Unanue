@@ -27,10 +27,24 @@ if (isset($_POST['data'])) {
 
     $path = "perfiles/".basename($_FILES['imagen']['name']);
     move_uploaded_file($_FILES['imagen']['tmp_name'], $path);
+	//Sanitization of Pic
+	$data['imagen'] = $conx -> real_escape_string($data['imagen']);
     $data['imagen'] = basename($_FILES['imagen']['name']);
 	//if (basename($_FILES['imagen']['name'])=! "*.jpeg$" or basename($_FILES['imagen']['name'])=! "*.png$"){
 	//	echo "<script> alert('Bad file type') </script>";
 	}
+	//sql sanitization of parameters
+	$data['email'] = $conx -> real_escape_string($data['email']);
+	$data['password'] = $conx -> real_escape_string($data['password']);
+	$data['firstname'] = $conx -> real_escape_string($data['firstname']);
+	$data['lastname'] = $conx -> real_escape_string($data['lastname']);
+	$data['city'] = $conx -> real_escape_string($data['city']);
+	$data['stateProv'] = $conx -> real_escape_string($data['stateProv']);
+	$data['country'] = $conx -> real_escape_string($data['country']);
+	$data['postcode'] = $conx -> real_escape_string($data['postcode']);
+	$data['telephone'] = $conx -> real_escape_string($data['telephone']);
+	
+
 
     $sql = "INSERT INTO users(username, password, izena, abizena, hiria, lurraldea, herrialdea, postakodea, telefonoa, irudia) VALUES (";
     $sql .= "'" . $data['email'] . "', ";

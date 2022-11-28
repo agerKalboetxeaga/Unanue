@@ -8,6 +8,10 @@ if(isset($_SESSION['admin']) && ($_SESSION['admin']==1)){
 }
 else{
     if(isset($_POST['submit'])){
+        //Cred sanitization
+        $_POST['username'] = $conx -> real_escape_string($_POST['username']);
+        $_POST['password'] = $conx -> real_escape_string($_POST['password']);
+
         $creds = mysqli_query($conx,"SELECT * FROM users WHERE username='".$_POST['username']."' AND password='".md5($_POST['password'])."'");
 
         $creds = mysqli_fetch_array($creds);
@@ -31,7 +35,7 @@ else{
     <legend><b>Login</b></legend>
         <form action="<?php echo $_SERVER['PHP_SELF']."?action=login"; ?>" method="post">
             <br>
-            Username/Email: <input type=text name=username pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Usuario"><br>
+            Username/Email: <input type=text name=username pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required placeholder="Usuario"><br>
             Password: <input type=password name=password pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Contraseña"><br>
             <br><input type=submit name="submit" value=Login><br>
         </form>

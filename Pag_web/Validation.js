@@ -33,6 +33,7 @@ if (Extension == "gif" || Extension == "png" || Extension == "bmp"
 else {
             alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
 
+            fuData.value = '';
         }
     }
 }

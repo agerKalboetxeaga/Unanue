@@ -36,7 +36,7 @@ if(isset($_SESSION['admin']) && ($_SESSION['admin']==1)){
   echo "<h3>Ongi Etorri ";
 
   echo $_SESSION['username'];
-  if ($_SESSION['username']== "admin@bdweb"){
+  if ($_SESSION['username']== "admin@bdweb.com"){
       echo " | <a href=".$_SERVER['PHP_SELF']."?action=account>Kontua</a> | <a href=".$_SERVER['PHP_SELF']."?action=updel>Igo/Ezabatu</a> | <a href=".$_SERVER['PHP_SELF']."?action=logout>Saioa itxi</a> | <a href=".$_SERVER['PHP_SELF'].">Hasiera</a></h3>";
   }
   else {
@@ -61,7 +61,7 @@ else{
 if(isset($_GET['action'])){
     switch($_GET['action']){
       case("updel"):
-        if(isset($_SESSION['admin']) && ($_SESSION['admin']==1) && ($_SESSION['username']=='admin@bdweb')){
+        if(isset($_SESSION['admin']) && ($_SESSION['admin']==1) && ($_SESSION['username']=='admin@bdweb.com')){
           include("includes/updel.php");
         }else{
           header("Location: ".$_SERVER['PHP_SELF']);

@@ -1,11 +1,11 @@
 <?php
-if($_SESSION['username'] != "admin@bdweb"){
+if($_SESSION['username'] != "admin@bdweb.com"){
   header("Location: ".$_SERVER['PHP_SELF']);
 }
 
 if(isset($_GET['pic_id'])){
 
-    $_GET['pic_id'] = mysql_real_escape_string($_GET['pic_id']);
+    $_GET['pic_id'] = $conx -> real_escape_string($_GET['pic_id']);
     $filequery = mysqli_query($conx,"SELECT pic FROM produktuak WHERE id LIKE ".$_GET['pic_id']);
     $delfile = mysqli_fetch_array($filequery);
     unlink("images/".$delfile['pic']);
@@ -15,13 +15,13 @@ if(isset($_GET['pic_id'])){
 
 if(isset($_GET['upload'])){
     //Sanitization of upload
-    $_POST['izena'] = mysql_real_escape_string($_POST['izena']);
+    $_POST['izena'] =$conx -> real_escape_string($_POST['izena']);
     $_POST['izena'] = filter_var($_POST['izena'], FILTER_SANITIZE_STRING);
 
-    $_POST['deskripzioa'] = mysql_real_escape_string($_POST['deskripzioa']);
+    $_POST['deskripzioa'] = $conx -> real_escape_string($_POST['deskripzioa']);
     $_POST['deskripzioa'] = filter_var($_POST['deskripzioa'], FILTER_SANITIZE_STRING);
 
-    $_POST['salneurria'] = mysql_real_escape_string($_POST['salneurria']);
+    $_POST['salneurria'] = $conx -> real_escape_string($_POST['salneurria']);
     $_POST['salneurria'] = filter_var($_POST['salneurria'], FILTER_SANITIZE_NUMBER_INT);
 
 
@@ -43,12 +43,12 @@ if(isset($_GET['upload'])){
                 <legend><b>Produktu berria </b></legend>
                 <form enctype=multipart/form-data action=<?php echo $_SERVER['PHP_SELF']."?action=updel&upload=1"; ?> method=POST>
                     Izena: <input type="text" name="izena"  pattern="[A-Za-z]{1,15}" required placeholder="Name"><br>
-                    Deskripzioa: <input type="text" name="deskripzioa" pattern="[A-Za-z0-9.-]" required placeholder="Description"><br>
-                    Salneurria: <input type="text" name="salneurria" pattern="/^\d+$/{1,7}" required placeholder="PriceTag"><br>
-                    Stock: <input type="text" name="stock" pattern="/^\d+$/{1,7}" required placeholder="Stock"><br>
+                    Deskripzioa: <input type="text" name="deskripzioa" pattern="[A-Za-z0-9.-]{1,120}" required placeholder="Description"><br>
+                    Salneurria: <input type="text" name="salneurria" pattern="[0-9]{1,7}" required placeholder="PriceTag"><br>
+                    Stock: <input type="text" name="stock" pattern="[0-9]{1,7}" required placeholder="Stock"><br>
                     Irudia aukeratu:<br>
                     <br>
-                    <input name=upfile type=img id="fileChooser" onchange="return ValidateFileUpload()"><br>
+                    <input name=upfile type=file id="fileChooser" onchange="return ValidateFileUpload()"><br>
                     <br>
                     <input type=submit value=Igo>
                 </form>
