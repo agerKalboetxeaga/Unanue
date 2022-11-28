@@ -32,7 +32,7 @@ if (isset($_POST['data'])) {
     $data['imagen'] = basename($_FILES['imagen']['name']);
 	//if (basename($_FILES['imagen']['name'])=! "*.jpeg$" or basename($_FILES['imagen']['name'])=! "*.png$"){
 	//	echo "<script> alert('Bad file type') </script>";
-	}
+	//}
 	//sql sanitization of parameters
 	$data['email'] = $conx -> real_escape_string($data['email']);
 	$data['password'] = $conx -> real_escape_string($data['password']);
