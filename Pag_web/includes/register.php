@@ -78,53 +78,53 @@ if (isset($_POST['data'])) {
 		<form action="<?php echo $_SERVER['PHP_SELF']."?action=register"; ?>" method="POST" enctype="multipart/form-data">
 			<p>
 				<label>Email/username: </label>
-				<input type="text" name="data[email]" value="<?php echo $data['email']; ?>"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required placeholder="Email" />
-				<?php if ($error['email']) echo '<p>', $error['email']; ?>
+				<input type="text" name="data[email]" value="<?php //echo $data['email']; ?>"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required placeholder="Email" />
+				<!--<?php //if ($error['email']) echo '<p>', $error['email']; ?> -->
 			<p>
 			<p>
 				<label>Izena: </label>
-				<input type="text" name="data[firstname]" value="<?php echo $data['firstname']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="Name" />
-				<?php if ($error['firstname']) echo '<p>', $error['firstname']; ?>
+				<input type="text" name="data[firstname]" value="<?php //echo $data['firstname']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="Name" />
+				
 			<p>
 			<p>
 				<label>Abizena: </label>
-				<input type="text" name="data[lastname]" value="<?php echo $data['lastname']; ?>"  pattern="[A-Za-z]{1,15}" required placeholder="LastName" />
-				<?php if ($error['lastname']) echo '<p>', $error['lastname']; ?>
+				<input type="text" name="data[lastname]" value="<?php //echo $data['lastname']; ?>"  pattern="[A-Za-z]{1,15}" required placeholder="LastName" />
+				<!-- <?php if ($error['lastname']) echo '<p>', $error['lastname']; ?> -->
 			<p>
 			<p>
 				<label>Hiria: </label>
-				<input type="text" name="data[city]" value="<?php echo $data['city']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="City"/>
-				<?php if ($error['city']) echo '<p>', $error['city']; ?>
+				<input type="text" name="data[city]" value="<?php //echo $data['city']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="City"/>
+				<!-- <?php //if ($error['city']) echo '<p>', $error['city']; ?> -->
 			<p>
 			<p>
 				<label>Lurraldea: </label>
-				<input type="text" name="data[stateProv]" value="<?php echo $data['stateProv']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="State/Prov"/>
-				<?php if ($error['stateProv']) echo '<p>', $error['stateProv']; ?>
+				<input type="text" name="data[stateProv]" value="<?php //echo $data['stateProv']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="State/Prov"/>
+				<!-- <?php if ($error['stateProv']) echo '<p>', $error['stateProv']; ?> -->
 			<p>
 			<!-- // *** validation: implement a database lookup -->
 			<p>
 				<label>Herrialdea: </label>
-				<input type="text" name="data[country]" value="<?php echo $data['country']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="Country"/>
-				<?php if ($error['country']) echo '<p>', $error['country']; ?>
+				<input type="text" name="data[country]" value="<?php //echo $data['country']; ?>" pattern="[A-Za-z]{1,15}" required placeholder="Country"/>
+				<!-- <?php if ($error['country']) echo '<p>', $error['country']; ?> -->
 			<p>
 			<p>
 				<label>Postakodea: </label>
-				<input type="text" name="data[postcode]" value="<?php echo $data['postcode']; ?>" pattern="/^\d+$/{5,8}" required placeholder="PostCode"/>
-				<?php if ($error['postcode']) echo '<p>', $error['postcode']; ?>
+				<input type="text" name="data[postcode]" value="<?php //echo $data['postcode']; ?>" pattern="/^\d+$/{5,8}" required placeholder="PostCode"/>
+				<!-- <?php if ($error['postcode']) echo '<p>', $error['postcode']; ?> -->
 			<p>
 			<p>
 				<label>Telefonoa: </label>
-				<input type="text" name="data[telephone]" value="<?php echo $data['telephone']; ?>" pattern="/^\d+$/{9}" required placeholder="Tlf" />
-				<?php if ($error['telephone']) echo '<p>', $error['telephone']; ?>
+				<input type="text" name="data[telephone]" value="<?php //echo $data['telephone']; ?>" pattern="/^\d+$/{9}" required placeholder="Tlf" />
+				<!-- <?php if ($error['telephone']) echo '<p>', $error['telephone']; ?> -->
 			<p>
 			<p>
 				<label>Pasahitza: </label>
-				<input type="text" name="data[password]" value="<?php echo $data['password']; ?>" pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Password"/>
-				<?php if ($error['password']) echo '<p>', $error['password']; ?>
+				<input type="text" name="data[password]" value="<?php //echo $data['password']; ?>" pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Password"/>
+				<!-- <?php if ($error['password']) echo '<p>', $error['password']; ?> -->
 			<p>
             <p>
                 <label>Pasahitza errepikatu: </label>
-                <input type="text" name="data[password2]" value="<?php echo $data['password2']; ?>"  pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Retype Password"/>
+                <input type="text" name="data[password2]" value="<?php //echo $data['password2']; ?>"  pattern="[A-Za-z0-9_-]{1,15}" required placeholder="Retype Password"/>
             <p>
             <p>
                 <label>Irudia aukeratu:</label>
