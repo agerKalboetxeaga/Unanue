@@ -58,8 +58,6 @@ jobs:
       #   ScanCentral Client documentation is located at https://www.microfocus.com/documentation/fortify-software-security-center/
       - name: Download Fortify ScanCentral Client
         uses: fortify/gha-setup-scancentral-client@5b7382f8234fb9840958c49d5f32ae854115f9f3
-      - name: Package Code + Dependencies
-
       # Start Fortify on Demand SAST scan and wait until results complete. For more information on FoDUploader commands, see https://github.com/fod-dev/fod-uploader-java
       # TODO: Update ENV variables for your application and create the necessary GitHub Secrets.  Helpful hints:
       #   Credentials and release ID should be obtained from your FoD tenant (either Personal Access Token or API Key can be used).
