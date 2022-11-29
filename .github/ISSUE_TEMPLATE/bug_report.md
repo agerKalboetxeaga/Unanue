@@ -35,4 +35,3 @@ Posible bada pantaila-kaptura batzuk egitea ondo egongo litzateke.
 
 **Kontextu gehiago**
 Arazoari buruzko kontextu gehiago nahi baduzu.
-
