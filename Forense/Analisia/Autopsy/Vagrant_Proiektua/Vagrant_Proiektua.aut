@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AutopsyCase>
+  <SchemaVersion>5.0</SchemaVersion>
+  <CreatedDate>2022/11/22 14:02:55 (CET)</CreatedDate>
+  <ModifiedDate>2022/11/22 14:02:57 (CET)</ModifiedDate>
+  <CreatedByAutopsyVersion>4.19.3</CreatedByAutopsyVersion>
+  <SavedByAutopsyVersion>4.19.3</SavedByAutopsyVersion>
+  <Case>
+    <Name>vagrant_proiektua_20221122_140255</Name>
+    <DisplayName>Vagrant_Proiektua</DisplayName>
+    <Number>1</Number>
+    <Examiner>Ager</Examiner>
+    <ExaminerPhone>666 666 666</ExaminerPhone>
+    <ExaminerEmail>AgerTekniko@It.eus</ExaminerEmail>
+    <CaseNotes/>
+    <CaseType>Single-user case</CaseType>
+    <Database/>
+    <CaseDatabase>autopsy.db</CaseDatabase>
+    <TextIndex/>
+  </Case>
+  <OriginalCase/>
+</AutopsyCase>

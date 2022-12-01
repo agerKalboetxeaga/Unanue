@@ -1,0 +1,2 @@
+Prefetch Directory is  C:\Users\KALBOE~1.AGE\AppData\Local\Temp\Autopsy\vagrant_proiektua_20221122_140255\Temp\RecentActivity\1-Autopsy_PF_DB.db3_0
+DB file is  C:\Users\kalboetxeaga.ager\Documents\Proiekto\Analisia\Autopsy\Vagrant_Proiektua\ModuleOutput\prefetch\1-Autopsy_PF_DB.db3
