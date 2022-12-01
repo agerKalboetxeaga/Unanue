@@ -1,2 +1,2 @@
 #!/bin/sh
-jupyter notebook pyScript_proiektu.ipynb
+jupyter run pyScript_proiektu.ipynb

@@ -1,0 +1,1 @@
+jupyter run pyScript_proiektu.ipynb 
