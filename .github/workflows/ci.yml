@@ -18,11 +18,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: composer install --prefer-dist
-
       - name: Run test suite
-        run: vendor/bin/phpunit --testsuite unit --fail-on-incomplete  --log-junit junit.xml --coverage-clover clover.xml
+        run: vendor/bin/phpunit --testsuite unit --log-junit junit.xml --coverage-clover clover.xml
 
       # https://github.com/marketplace/actions/publish-unit-test-results
       - name: Publish test results
@@ -47,27 +44,4 @@ jobs:
           if [[ ${CODE_COVERAGE} == *"test coverage, got"* ]] ; then
             exit 1;
           fi
-  php-stan-php-cs:
-    name: PHPStan (level 9) & PHPcs
-    runs-on: ubuntu-latest
-    steps:
-      # https://github.com/marketplace/actions/setup-php-action
-      - name: Setup PHP 8.1
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-
-      # https://github.com/marketplace/actions/checkout
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: composer install --prefer-dist
-
-      - name: Run PHPStan
-        run: vendor/bin/phpstan analyse
-
-      - name: Run PHPcs fixer dry-run
-
-        run: vendor/bin/php-cs-fixer fix --dry-run --stop-on-violation --config=.php-cs-fixer.dist.php
 
